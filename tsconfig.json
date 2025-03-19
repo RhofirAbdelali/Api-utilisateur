@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "commonjs",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "strictPropertyInitialization": false,
+      "rootDir": "./",
+      "outDir": "./dist"
+    },
+    "include": ["server/**/*", "routes/**/*", "controller/**/*", "prisma/**/*"],
+    "exclude": ["node_modules"]
+    
+  }

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node server/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -20,8 +20,10 @@
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
     "prisma": "^6.5.0",
+    "reflect-metadata": "^0.2.2",
     "swagger-ui-express": "^5.0.1",
     "ts-node": "^10.9.2",
+    "typeorm": "^0.3.21",
     "typescript": "^5.8.2",
     "yamljs": "^0.3.0"
   },

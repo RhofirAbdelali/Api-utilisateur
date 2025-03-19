@@ -1,6 +1,6 @@
 import passport from 'passport';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
-import { prisma } from './prismaClient';
+import { prisma } from '../prisma/prismaClient';
 
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID || '',
@@ -19,7 +19,10 @@ passport.use(new GoogleStrategy({
       name: profile.displayName,
       provider: 'google',
       provider_id: profile.id,
-      role: 'buyer', 
+      role: {
+        connect: { name: 'buyer' }  
+      }
+       
     },
   });
 

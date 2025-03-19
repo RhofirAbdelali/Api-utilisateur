@@ -1,31 +1,29 @@
+import { prisma } from '../prisma/prismaClient';
+import { Request, Response } from 'express';
 
-
-import { prisma } from './prismaClient';
-
-export async function getUsers(req, res) {
+export async function getUsers(req: Request, res: Response) {
     const users = await prisma.user.findMany();
     res.json(users);
-  }
-  
-  export async function updateUserRole(req, res) {
+}
+
+export async function updateUserRole(req: Request, res: Response) {
     const { id } = req.params;
     const { role } = req.body;
-  
+
     const updatedUser = await prisma.user.update({
-      where: { id },
-      data: { role },
+        where: { id },
+        data: { role },
     });
-  
+
     res.json(updatedUser);
-  }
-  
-  export async function deleteUser(req, res) {
+}
+
+export async function deleteUser(req: Request, res: Response) {
     const { id } = req.params;
-  
+
     await prisma.user.delete({
-      where: { id },
+        where: { id },
     });
-  
+
     res.status(204).send();
-  }
-  
+}
