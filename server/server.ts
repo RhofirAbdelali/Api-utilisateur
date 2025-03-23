@@ -14,7 +14,8 @@ app.use(passport.initialize());
 
 
 app.use('/auth', authRoutes);
-app.use('/admin', userRoutes);
+//app.use('/admin', userRoutes);
+app.use('/users', userRoutes);
 
 
 app.listen(3000, () => {
