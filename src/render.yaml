@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: user-service
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: node dist/server.js
+    envVars:
+      - key: DATABASE_URL
+        value: ton-url-postgres-render
+      - key: JWT_SECRET
+        value: Justicket
+      - key: RABBITMQ_URL
+        value: ton-url-cloudamqp
+      - key: GOOGLE_CLIENT_ID
+        value: id-client-google
+      - key: GMAIL_USER
+        value: ton-mail
+      - key: GMAIL_PASS
+        value: mot-de-passe-app-gmail
+      - key: FRONTEND_URL
+        value: http://localhost:5173

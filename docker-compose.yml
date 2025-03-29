@@ -1,0 +1,12 @@
+services:
+  user-service:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=postgresql://api_utilisateur_user:0qj2eiXuXwkA7ax4ZBA7ywkevjTJPF3p@dpg-cvfp4rqj1k6c73a866h0-a.oregon-postgres.render.com/api_utilisateur
+      - JWT_SECRET=Justicket
