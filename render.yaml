@@ -7,9 +7,7 @@ services:
     startCommand: node dist/server.js
     envVars:
       - key: DATABASE_URL
-        fromDatabase:
-          name: api_utilisateur
-          property: connectionString
+        sync: false # configure dans Render
       - key: JWT_SECRET
         sync: false # configure dans Render
       - key: RABBITMQ_URL
@@ -21,4 +19,4 @@ services:
       - key: GMAIL_PASS
         sync: false # configure dans Render
       - key: FRONTEND_URL
-        value: http://localhost:5173
+        sync: false # configure dans Render
