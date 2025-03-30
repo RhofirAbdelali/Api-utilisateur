@@ -104,4 +104,4 @@ Ce service interagit via RabbitMQ :
 
 ## 🔗 Swagger
 
-La documentation Swagger est disponible dans `swagger.yaml`.
+La documentation Swagger est disponible dans https://api-utilisateur.onrender.com/api-docs/.
