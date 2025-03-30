@@ -1,4 +1,4 @@
-import { User, Role } from "@prisma/client";
+import type { User, Role } from "@prisma/client";
 
 export function userToResponse(user: User & { role: Role }) {
   return {
