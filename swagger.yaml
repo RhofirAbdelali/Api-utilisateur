@@ -7,7 +7,7 @@ info:
     récupérer leur profil et gérer leur accès sur la plateforme Justicket.
 
 servers:
-  - url: http://localhost:3000
+  - url: https://api-utilisateur.onrender.com
     description: Serveur de développement
 
 paths:
