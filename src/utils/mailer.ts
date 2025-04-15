@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { generateWelcomeMessage } from "../services/openai.service";
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -9,14 +10,17 @@ const transporter = nodemailer.createTransport({
 });
 
 export const sendWelcomeEmail = async (to: string, prenom: string) => {
+  const aiMessage = await generateWelcomeMessage(prenom);
+
   const mailOptions = {
     from: `"Justicket 👋" <${process.env.GMAIL_USER}>`,
     to,
     subject: "Bienvenue chez Justicket 🎉",
-    html: `<h2>Bienvenue ${prenom} !</h2>
-           <p>Merci de vous être inscrit sur Justicket. Nous sommes ravis de vous avoir parmi nous !</p>
-           <p>Profitez pleinement de nos services.</p>
-           <p>🎫 L'équipe Justicket</p>`,
+    html: `
+      <h2>Bienvenue ${prenom} !</h2>
+      <p>${aiMessage}</p>
+      <p>🎫 L'équipe Justicket</p>
+    `,
   };
 
   await transporter.sendMail(mailOptions);
